@@ -11,11 +11,18 @@
     "copy": "copyfiles --flat src/**/*.css lib/",
     "copy:watch": "nodemon --ignore lib -e css --exec 'yarn copy'",
     "dev": "npm-run-all -p build:watch copy:watch",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "pre-commit": "npm-run-all -s lint test",
     "test": "jest"
   },
   "files": [
     "src/**/*.*"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
   "peerDependencies": {
     "react": "^16.12.0"
   },
@@ -24,8 +31,13 @@
     "@babel/preset-env": "^7.8.4",
     "@types/jest": "^25.1.3",
     "@types/react": "^16.9.22",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
     "babel-jest": "^25.1.0",
     "copyfiles": "^2.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
     "jest": "^24.9.0",
     "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
