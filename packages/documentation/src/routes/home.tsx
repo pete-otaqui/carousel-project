@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 
 import { GenericCarousel, GCItem } from "@otaqui/generic-carousel";
-
-import "./App.css";
 import "@otaqui/generic-carousel/lib/index.css";
 
 const getQueryUrl = (q: string): string => {
   return `https://pixabay.com/api/?key=9656065-a4094594c34f9ac14c7fc4c39&image_type=photo&q=${q}`;
 };
 
-function App() {
+export const HomeRoute: FC = () => {
   const [searchValue, setSearchValue] = useState("search");
   const [query, setQuery] = useState("search");
   const [results, setResults] = useState<GCItem[]>([]);
@@ -72,6 +70,4 @@ function App() {
       </main>
     </div>
   );
-}
-
-export default App;
+};
