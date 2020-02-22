@@ -13,12 +13,6 @@ const allItems: GCItem[] = [
   { guid: "7", src: "src-7.jpg", title: "title 7" }
 ];
 
-const sleep = async (ms: number): Promise<void> => {
-  return new Promise(resolve => {
-    setTimeout(resolve, ms);
-  });
-};
-
 describe("Generic Carousel", () => {
   describe("Rendering", () => {
     it("should render a basic item", () => {
