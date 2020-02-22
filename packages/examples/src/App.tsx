@@ -10,8 +10,8 @@ const getQueryUrl = (q: string): string => {
 };
 
 function App() {
-  const [searchValue, setSearchValue] = useState("");
-  const [query, setQuery] = useState("");
+  const [searchValue, setSearchValue] = useState("search");
+  const [query, setQuery] = useState("search");
   const [results, setResults] = useState<GCItem[]>([]);
   useEffect(() => {
     const f = async () => {
