@@ -5,8 +5,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "npm-run-all -p dev:generic-carousel dev:documentation",
+    "dev": "npm-run-all -p dev:generic-carousel dev:pixabay-carousel dev:documentation",
     "dev:generic-carousel": "lerna run dev --scope=@otaqui/generic-carousel",
+    "dev:pixabay-carousel": "lerna run dev --scope=@otaqui/pixabay-carousel",
     "dev:documentation": "lerna run start --scope=@otaqui/documentation",
     "lint": "lerna run lint",
     "test": "lerna run test",

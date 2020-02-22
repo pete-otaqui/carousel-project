@@ -69,3 +69,7 @@ The carousel is styled with pure CSS, and you are free to provide styles with a
 higher specificty, or too use CSS Custom Properties (css variables) to control
 the styling. See the "documentation" project for morre information and an
 example.
+
+## Pixabay Carousel
+
+As well as a low-level carousel, this repository also provides a `PixabayCarousel` component, which automatically searches Pixabay for a given query and displays the results. An example is given in the "documentation" project.

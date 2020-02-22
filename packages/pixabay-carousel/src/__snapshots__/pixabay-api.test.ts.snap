@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pixabay-api should map results 1`] = `
+Array [
+  Object {
+    "guid": "3077928",
+    "src": "https://pixabay.com/get/55e0d2444350a414f6da8c7dda793e781039dee3564c704c7d2d78d59649c35c_640.jpg",
+    "title": "By peter_pyw, 2214 likes",
+  },
+  Object {
+    "guid": "1072828",
+    "src": "https://pixabay.com/get/57e0d2414250a414f6da8c7dda793e781039dee3564c704c7d2d78d59649c35c_640.jpg",
+    "title": "By Valiphotos, 1736 likes",
+  },
+]
+`;
