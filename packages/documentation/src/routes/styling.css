@@ -1,0 +1,12 @@
+.custom-styling {
+  --gc-color-primary: rgb(136, 134, 12);
+  --gc-color-secondary: rgb(186, 69, 190);
+  --gc-color-black: rgba(0, 0, 0);
+  --gc-color-black-faded: rgba(0, 0, 0, 0.5);
+  --gc-color-white: rgb(255, 255, 255);
+  --gc-color-white-faded: rgba(255, 255, 255, 0.5);
+  --gc-color-shadow: none;
+  --gc-color-shadow-faded: none;
+  --gc-animation-speed: 0.8s;
+  --gc-inactive-scale: 0.6;
+}
