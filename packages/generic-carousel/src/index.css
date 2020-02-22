@@ -1,6 +1,17 @@
 /* You can override these variables in a more specific scope */
 :root {
-  --gc-color-primary: rgba(12, 82, 136);
+  --gc-color-primary: rgb(12, 82, 136);
+  --gc-color-secondary: rgb(69, 190, 142);
+  --gc-color-black: rgba(0, 0, 0);
+  --gc-color-black-faded: rgba(0, 0, 0, 0.5);
+  --gc-color-white: rgb(255, 255, 255);
+  --gc-color-white-faded: rgba(255, 255, 255, 0.5);
+
+  --gc-color-items-bg: var(--gc-color-white);
+  --gc-color-control-text: var(--gc-color-white);
+  --gc-color-shadow: var(--gc-color-black);
+  --gc-color-shadow-faded: var(--gc-color-black-faded);
+
   --gc-height: 346px;
   --gc-item-width: 320px;
   --gc-item-height: calc(var(gc--height) - 86px);
@@ -10,8 +21,8 @@
   --gc-inactive-scale: 0.8;
 
   /*
-    this is useless, but left here until this project moves to Sass,
-    or CSS Environment Variables Level 2 is generally available:
+    This "breakpoint size" is useless, but left here until this project moves to
+    Sass, or CSS Environment Variables Level 2 is generally available:
     https://github.com/w3c/csswg-drafts/issues/2627
    */
   --gc--mobile: 576px;
@@ -42,7 +53,7 @@
 }
 .gc-control {
   background-color: var(--gc-color-primary);
-  color: #fff;
+  color: var(--gc-color-control-text);
   border: none;
   border-radius: 6px;
   font-size: 100%;
@@ -59,16 +70,16 @@
   border-bottom-left-radius: 0;
 }
 /*
-        NOTE:
-          using `calc()` _and_ `var()` does not work in pre-chromium Edge. One
-          alternative would be to avoid `var()` altogether, especially with
-          something like Sass, which would then just output the hard-coded
-          values without needing this stuff.
-          In Chromium Edge (and there have actually been a couple of releases
-          already!) this is all fine, but that version is still "opt in".
-      */
+  NOTE:
+    using `calc()` _and_ `var()` does not work in pre-chromium Edge. One
+    alternative would be to avoid `var()` altogether, especially with
+    something like Sass, which would then just output the hard-coded
+    values without needing this stuff.
+    In Chromium Edge (and there have actually been a couple of releases
+    already!) this is all fine, but that version is still "opt in".
+*/
 .gc-items {
-  background-color: #fff;
+  background-color: var(--gc-color-items-bg);
   width: calc(var(--gc-item-width) * 6);
   display: flex;
   padding-top: var(--gc-item-padding);
@@ -80,9 +91,9 @@
   counter-reset: gc-item;
 }
 /*
-        This [data-active] stuff is probably pointless, and we could just use
-        nth-child instead, but it
-      */
+  This [data-active] stuff is probably pointless, and we could just use
+  nth-child instead, but it
+*/
 .gc-carousel[data-active="1"] .gc-items {
   transform: translateX(calc(-1.5 * var(--gc-item-width)));
 }
@@ -116,7 +127,7 @@
   transform: scale(1);
 }
 .gc-item--active .gc-img {
-  box-shadow: 0 0 8px #000;
+  box-shadow: 0 0 8px var(--gc-color-shadow);
 }
 .gc-item-number::before {
   position: absolute;
@@ -126,14 +137,14 @@
   counter-increment: gc-item;
   content: counter(gc-item);
   font-size: 120%;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 8px var(--gc-color-shadow-faded);
 }
 .gc-image {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(69, 190, 142); /* 69,190,142 */
+  background-color: var(--gc-color-secondary);
   padding: var(--gc-item-padding);
 }
 .gc-a {
@@ -153,7 +164,7 @@
 .gc-img {
   max-width: 100%;
   max-height: 100%;
-  box-shadow: 0 0 0 #000;
+  box-shadow: 0 0 0 var(--gc-color-shadow);
 }
 .gc-item-title {
   margin: 6px 0 0;
@@ -179,7 +190,7 @@
     width: calc(2 * var(--gc-arrow-height));
     height: calc(2 * var(--gc-arrow-height));
     top: calc(50% - var(--gc-arrow-height));
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--gc-color-white-faded);
     border-radius: 50%;
   }
   .gc-control::before {

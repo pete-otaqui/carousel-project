@@ -60,6 +60,15 @@ function App() {
           </fieldset>
         </form>
         <GenericCarousel items={results} />
+        <p>
+          Note that we can also have custom styling, just with CSS Custom
+          Properties (aka "CSS Variables"). Here we have changed some colours,
+          lost the shadows, made the scaling factor larger between active and
+          inactive, and slowed down the animation.
+        </p>
+        <div className="custom-styling">
+          <GenericCarousel items={results} />
+        </div>
       </main>
     </div>
   );
