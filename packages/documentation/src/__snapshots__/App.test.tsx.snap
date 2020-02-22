@@ -1,11 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render 1`] = `
-<div
-  className="App"
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
 >
-  <main>
-    <Component />
-  </main>
-</div>
+  <Nav />
+  <Switch>
+    <Route
+      component={[Function]}
+      path="/home"
+    />
+    <Route
+      component={[Function]}
+      path="/basic"
+    />
+    <Route
+      component={[Function]}
+      path="/custom-styling"
+    />
+    <Route
+      component={[Function]}
+      path="/pixabay-search"
+    />
+    <Redirect
+      to="/home"
+    />
+  </Switch>
+</Router>
 `;
