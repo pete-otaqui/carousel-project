@@ -9,6 +9,13 @@ export const getQueryUrl = (
   return `https://pixabay.com/api/?key=${k}&image_type=${imageType}&q=${q}`;
 };
 
+export declare type PixabayHit = {
+  id: string;
+  webformatURL: string;
+  user: string;
+  likes: number;
+};
+
 export const runQuery = async (
   apiKey: string,
   query: string,
@@ -18,7 +25,7 @@ export const runQuery = async (
   const url = getQueryUrl(apiKey, query, imageType);
   const response = await fetcher(url);
   const results = await response.json();
-  const items: GCItem[] = results.hits.slice(0, 6).map((result: any) => {
+  const items: GCItem[] = results.hits.slice(0, 6).map((result: PixabayHit) => {
     return {
       guid: `${result.id}`,
       src: result.webformatURL,
