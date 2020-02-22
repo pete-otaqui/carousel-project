@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgba(228, 235, 224);
+  font-family: "Ropa Sans", Arial, Helvetica, sans-serif;
 }
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
   color: rgba(12, 82, 136);
 }
