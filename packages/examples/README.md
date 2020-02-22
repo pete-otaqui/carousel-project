@@ -1,3 +1,12 @@
+# Generic Carousel Examples
+
+Note that this project doesn't really do very much right now. It
+exists to deminstrate how one can use the "monorepo" pattern to create
+a minimal shareable component project, along with deployable instances
+of examples, documentation, storybook outout, etc. alongside.
+
+# CRA Docs
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
