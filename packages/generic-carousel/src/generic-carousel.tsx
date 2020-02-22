@@ -13,6 +13,7 @@ export type GenericCarouselProps = {
 };
 
 export const GenericCarousel: FC<GenericCarouselProps> = props => {
+  const { items } = props;
   return (
     <section
       aria-label="Generic Carousel"
@@ -38,30 +39,27 @@ export const GenericCarousel: FC<GenericCarouselProps> = props => {
           </button>
         </fieldset>
         <div className="gc-items" id="abcd-gc-items">
-          {props.items.map(item => (
-            <div
-              key={item.guid}
-              className="gc-item"
-              aria-label="Item {N} of {N} by {user} tagged {tags}"
-              aria-roledescription="slide"
-              role="group"
-            >
-              <div className="gc-image">
-                <a
-                  className="gc-a"
-                  href="images/52e3dd474950b108f5d084609621317b133fd8e04e507441772e79d0964dc3_640.jpg"
-                >
-                  <img
-                    className="gc-img"
-                    src={item.src}
-                    alt="Photo by {user} tagged {tags}"
-                  />
-                </a>
+          {items.map((item, index) => {
+            const alt = item.alt || item.title;
+            const href = item.href || item.src;
+            return (
+              <div
+                key={item.guid}
+                className="gc-item"
+                aria-label={`Item ${index + 1} of ${items.length}`}
+                aria-roledescription="slide"
+                role="group"
+              >
+                <div className="gc-image">
+                  <a className="gc-a" href={href}>
+                    <img className="gc-img" src={item.src} alt={alt} />
+                  </a>
+                </div>
+                <div className="gc-item-number"></div>
+                <h3 className="gc-item-title">{item.title}</h3>
               </div>
-              <div className="gc-item-number"></div>
-              <h3 className="gc-item-title">Item title</h3>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
