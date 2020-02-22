@@ -119,3 +119,11 @@ There are many areas for improvement, so here are some bullet pointa for discuss
   )}
 <PixabayCarousel />
 ```
+
+- Proper accessibility - I haven't done anything to verify the implementation, other than basic "Lighthouse" test runs in Chrome dev tools
+- End-to-end tests - using something like cucumber to run end-to-end tests on devices, and maybe do some visual-regression tests with backstop or similar.
+- Visual & UX Design
+  - This could definitely do with being hit with the pretty stick.
+  - I followed the instructions very directly around "centering the active slide", but that actually pretty poor on a desktop.
+  - It would probably be nice to bound the left-most and right-most positions, so that there aren't large empty spaces.
+  - That would probably mean falling back to more JS-based position calculation, at least in setting up some of the offset rules and "step" css values, if not actually setting `left: 123px` directly from js.
