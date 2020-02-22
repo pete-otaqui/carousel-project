@@ -1,9 +1,10 @@
 import React from "react";
+import { shallow } from "enzyme";
 
 import { GenericCarousel } from "./generic-carousel";
 
 describe("Generic Carousel", () => {
   it("should render", () => {
-    expect(<GenericCarousel />).toMatchSnapshot();
+    expect(shallow(<GenericCarousel />)).toMatchSnapshot();
   });
 });
