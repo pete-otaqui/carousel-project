@@ -36,37 +36,7 @@ exports[`Generic Carousel should render 1`] = `
     <div
       className="gc-items"
       id="abcd-gc-items"
-    >
-      <div
-        aria-label="Item {N} of {N} by {user} tagged {tags}"
-        aria-roledescription="slide"
-        className="gc-item"
-        role="group"
-      >
-        <div
-          className="gc-image"
-        >
-          <a
-            className="gc-a"
-            href="images/52e3dd474950b108f5d084609621317b133fd8e04e507441772e79d0964dc3_640.jpg"
-          >
-            <img
-              alt="Photo by {user} tagged {tags}"
-              className="gc-img"
-              src="images/52e3dd474950b108f5d084609621317b133fd8e04e507441772e79d0964dc3_640.jpg"
-            />
-          </a>
-        </div>
-        <div
-          className="gc-item-number"
-        />
-        <h3
-          className="gc-item-title"
-        >
-          Item title
-        </h3>
-      </div>
-    </div>
+    />
   </div>
 </section>
 `;

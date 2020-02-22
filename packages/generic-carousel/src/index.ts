@@ -1,3 +1,7 @@
-import { GenericCarousel } from "./generic-carousel";
+import {
+  GenericCarousel,
+  GenericCarouselProps,
+  GCItem
+} from "./generic-carousel";
 
-export { GenericCarousel };
+export { GenericCarousel, GenericCarouselProps, GCItem };

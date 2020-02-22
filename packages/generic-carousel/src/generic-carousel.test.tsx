@@ -5,6 +5,6 @@ import { GenericCarousel } from "./generic-carousel";
 
 describe("Generic Carousel", () => {
   it("should render", () => {
-    expect(shallow(<GenericCarousel />)).toMatchSnapshot();
+    expect(shallow(<GenericCarousel items={[]} />)).toMatchSnapshot();
   });
 });

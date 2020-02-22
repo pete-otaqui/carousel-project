@@ -1,7 +1,18 @@
+/* eslint-disable react/prop-types */
 import React, { FC } from "react";
 
-export type GenericCarouselProps = {};
-export const GenericCarousel: FC<GenericCarouselProps> = () => {
+export type GCItem = {
+  guid: string;
+  src: string;
+  title: string;
+  alt?: string;
+  href?: string;
+};
+export type GenericCarouselProps = {
+  items: GCItem[];
+};
+
+export const GenericCarousel: FC<GenericCarouselProps> = props => {
   return (
     <section
       aria-label="Generic Carousel"
@@ -27,27 +38,30 @@ export const GenericCarousel: FC<GenericCarouselProps> = () => {
           </button>
         </fieldset>
         <div className="gc-items" id="abcd-gc-items">
-          <div
-            className="gc-item"
-            aria-label="Item {N} of {N} by {user} tagged {tags}"
-            aria-roledescription="slide"
-            role="group"
-          >
-            <div className="gc-image">
-              <a
-                className="gc-a"
-                href="images/52e3dd474950b108f5d084609621317b133fd8e04e507441772e79d0964dc3_640.jpg"
-              >
-                <img
-                  className="gc-img"
-                  src="images/52e3dd474950b108f5d084609621317b133fd8e04e507441772e79d0964dc3_640.jpg"
-                  alt="Photo by {user} tagged {tags}"
-                />
-              </a>
+          {props.items.map(item => (
+            <div
+              key={item.guid}
+              className="gc-item"
+              aria-label="Item {N} of {N} by {user} tagged {tags}"
+              aria-roledescription="slide"
+              role="group"
+            >
+              <div className="gc-image">
+                <a
+                  className="gc-a"
+                  href="images/52e3dd474950b108f5d084609621317b133fd8e04e507441772e79d0964dc3_640.jpg"
+                >
+                  <img
+                    className="gc-img"
+                    src={item.src}
+                    alt="Photo by {user} tagged {tags}"
+                  />
+                </a>
+              </div>
+              <div className="gc-item-number"></div>
+              <h3 className="gc-item-title">Item title</h3>
             </div>
-            <div className="gc-item-number"></div>
-            <h3 className="gc-item-title">Item title</h3>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -14,14 +14,30 @@ Or yarn:
 
 ## Usage
 
-```js
-import React from 'react';
-import { GenericCarousel } from '@otaqui/generic-carousel`;
+### Basic usage, provide a set of data
+
+```tsx
+import React from "react";
+import { GenericCarousel, GCItem } from "@otaqui/generic-carousel";
 
 export default function MyComponent() {
+  const items: GCItem[] = [
+    {
+      guid: "abcdef",
+      src: "./images/one.jpg",
+      title: "First image",
+      href: "./images/one-full-size.jpg"
+    },
+    {
+      guid: "fedcba",
+      src: "./images/two.jpg",
+      title: "Second image",
+      href: "./images/two-full-size.jpg"
+    }
+  ];
   return (
     <div>
-      <GenericCarousel /* ...props */ />
+      <GenericCarousel items={items} />
     </div>
   );
 }
