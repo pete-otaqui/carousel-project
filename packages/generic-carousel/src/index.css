@@ -14,7 +14,7 @@
 
   --gc-height: 346px;
   --gc-item-width: 320px;
-  --gc-item-height: calc(var(gc--height) - 86px);
+  --gc-item-height: calc(var(--gc-height) - 86px);
   --gc-item-padding: 20px;
   --gc-animation-easing: ease-in-out;
   --gc-animation-speed: 0.2s;
@@ -83,6 +83,7 @@
 .gc-items {
   background-color: var(--gc-color-items-bg);
   width: calc(var(--gc-item-width) * 6);
+  height: calc(var(--gc-height) - var(--gc-item-padding));
   display: flex;
   padding-top: var(--gc-item-padding);
   padding-bottom: var(--gc-item-padding);
@@ -148,14 +149,13 @@
   justify-content: center;
   background-color: var(--gc-color-secondary);
   padding: var(--gc-item-padding);
+  height: calc(var(--gc-item-height) - var(--gc-item-padding) * 4);
 }
 .gc-a {
   display: flex;
   align-items: center;
   transform: scale(var(--gc-inactive-scale));
   transition: all var(--gc-animation-easing) var(--gc-animation-speed);
-  max-width: 100%;
-  height: calc(var(--gc-item-height) - calc(4 * var(--gc-item-padding)));
   transform-origin: 50% 50%;
 }
 .gc-a:focus,
@@ -164,8 +164,8 @@
 }
 
 .gc-img {
+  max-height: calc(var(--gc-item-height) * var(--gc-inactive-scale));
   max-width: 100%;
-  max-height: 100%;
   box-shadow: 0 0 0 var(--gc-color-shadow);
 }
 .gc-item-title {

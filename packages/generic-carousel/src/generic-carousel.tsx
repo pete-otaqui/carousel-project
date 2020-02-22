@@ -11,11 +11,13 @@ export type GCItem = {
 export type GenericCarouselProps = {
   items: GCItem[];
   initialIndex?: number;
+  loading?: boolean;
 };
 
 export const GenericCarousel: FC<GenericCarouselProps> = ({
   items,
-  initialIndex = 0
+  initialIndex = 0,
+  loading = false
 }) => {
   const [activeItem, setActiveItem] = useState(initialIndex);
   const showItem = (index: number): void => {
@@ -59,33 +61,35 @@ export const GenericCarousel: FC<GenericCarouselProps> = ({
           </button>
         </fieldset>
         <div className="gc-items" id="abcd-gc-items">
-          {items.map((item, index) => {
-            const alt = item.alt || item.title;
-            const href = item.href || item.src;
-            return (
-              <div
-                key={item.guid}
-                className={`gc-item ${
-                  index === activeItem ? "gc-item--active" : ""
-                }`}
-                aria-label={`Item ${index + 1} of ${items.length}`}
-                aria-roledescription="slide"
-                role="group"
-              >
-                <div className="gc-image">
-                  <a
-                    className="gc-a"
-                    href={href}
-                    onFocus={(): void => showItem(index)}
-                  >
-                    <img className="gc-img" src={item.src} alt={alt} />
-                  </a>
+          {loading && <div className="gc-loading">Loading</div>}
+          {!loading &&
+            items.map((item, index) => {
+              const alt = item.alt || item.title;
+              const href = item.href || item.src;
+              return (
+                <div
+                  key={item.guid}
+                  className={`gc-item ${
+                    index === activeItem ? "gc-item--active" : ""
+                  }`}
+                  aria-label={`Item ${index + 1} of ${items.length}`}
+                  aria-roledescription="slide"
+                  role="group"
+                >
+                  <div className="gc-image">
+                    <a
+                      className="gc-a"
+                      href={href}
+                      onFocus={(): void => showItem(index)}
+                    >
+                      <img className="gc-img" src={item.src} alt={alt} />
+                    </a>
+                  </div>
+                  <div className="gc-item-number"></div>
+                  <h3 className="gc-item-title">{item.title}</h3>
                 </div>
-                <div className="gc-item-number"></div>
-                <h3 className="gc-item-title">{item.title}</h3>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </section>

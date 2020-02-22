@@ -10,12 +10,14 @@ const getQueryUrl = (q: string): string => {
 export const PixabayRoute: FC = () => {
   const [searchValue, setSearchValue] = useState("search");
   const [query, setQuery] = useState("search");
+  const [loading, setIsLoading] = useState(true);
   const [results, setResults] = useState<GCItem[]>([]);
   useEffect(() => {
     const f = async () => {
       if (query === "") {
         return;
       }
+      setIsLoading(true);
       const response = await fetch(getQueryUrl(query));
       const results = await response.json();
       const items: GCItem[] = results.hits.slice(0, 6).map((result: any) => {
@@ -26,6 +28,7 @@ export const PixabayRoute: FC = () => {
         };
       });
       setResults(items);
+      setIsLoading(false);
     };
     f();
   }, [query]);
@@ -55,7 +58,7 @@ export const PixabayRoute: FC = () => {
             <button type="submit">Search</button>
           </fieldset>
         </form>
-        <GenericCarousel items={results} />
+        <GenericCarousel items={results} loading={loading} />
       </main>
     </div>
   );

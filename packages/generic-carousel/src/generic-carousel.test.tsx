@@ -20,6 +20,12 @@ describe("Generic Carousel", () => {
       expect(shallow(<GenericCarousel items={items} />)).toMatchSnapshot();
     });
 
+    it("should show a notification if loading", () => {
+      const items = [];
+      const wrapper = shallow(<GenericCarousel items={items} loading={true} />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it("should use the alt attribute if provided", () => {
       const items = [{ ...allItems[0], alt: "alt text" }];
       const wrapper = shallow(<GenericCarousel items={items} />);

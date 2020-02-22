@@ -106,3 +106,53 @@ exports[`Generic Carousel Rendering should render a basic item 1`] = `
   </div>
 </section>
 `;
+
+exports[`Generic Carousel Rendering should show a notification if loading 1`] = `
+<section
+  aria-label="Generic Carousel"
+  aria-roledescription="carousel"
+  className="gc-carousel"
+  data-active={0}
+>
+  <div
+    className="gc-inner"
+  >
+    <fieldset
+      aria-label="Carousel controls"
+      className="gc-controls"
+    >
+      <legend
+        className="gc-legend"
+      >
+        Carousel controls
+      </legend>
+      <button
+        aria-controls="abcd-gc-items"
+        aria-label="Previous"
+        className="gc-control gc-control-prev"
+        onClick={[Function]}
+      >
+        Prev
+      </button>
+      <button
+        aria-controls="abcd-gc-items"
+        aria-label="Next"
+        className="gc-control gc-control-next"
+        onClick={[Function]}
+      >
+        Next
+      </button>
+    </fieldset>
+    <div
+      className="gc-items"
+      id="abcd-gc-items"
+    >
+      <div
+        className="gc-loading"
+      >
+        Loading
+      </div>
+    </div>
+  </div>
+</section>
+`;
