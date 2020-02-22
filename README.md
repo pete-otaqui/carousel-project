@@ -117,4 +117,5 @@ There are many areas for improvement, so here are some bullet pointa for discuss
       </PixabayCarouselItems>
     <>
   )}
+<PixabayCarousel />
 ```
