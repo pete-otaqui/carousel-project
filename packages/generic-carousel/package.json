@@ -5,7 +5,12 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
+    "clean": "rimraf lib/**/*.*",
     "build": "tsc",
+    "build:watch": "tsc --watch",
+    "copy": "copyfiles --flat src/**/*.css lib/",
+    "copy:watch": "nodemon --ignore lib -e css --exec 'yarn copy'",
+    "dev": "npm-run-all -p build:watch copy:watch",
     "test": "jest"
   },
   "files": [
@@ -20,7 +25,11 @@
     "@types/jest": "^25.1.3",
     "@types/react": "^16.9.22",
     "babel-jest": "^25.1.0",
+    "copyfiles": "^2.2.0",
     "jest": "^24.9.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.2"
   }
