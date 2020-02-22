@@ -26,6 +26,12 @@ describe("Generic Carousel", () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it("should show a message if there are no images", () => {
+      const items = [];
+      const wrapper = shallow(<GenericCarousel items={items} />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it("should use the alt attribute if provided", () => {
       const items = [{ ...allItems[0], alt: "alt text" }];
       const wrapper = shallow(<GenericCarousel items={items} />);

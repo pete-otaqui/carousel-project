@@ -62,7 +62,11 @@ export const GenericCarousel: FC<GenericCarouselProps> = ({
         </fieldset>
         <div className="gc-items" id="abcd-gc-items">
           {loading && <div className="gc-loading">Loading</div>}
+          {!loading && !items.length && (
+            <div className="gc-empty">No images to show</div>
+          )}
           {!loading &&
+            !!items.length &&
             items.map((item, index) => {
               const alt = item.alt || item.title;
               const href = item.href || item.src;
