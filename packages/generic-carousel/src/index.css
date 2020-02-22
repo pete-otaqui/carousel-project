@@ -29,6 +29,7 @@
 }
 
 .gc-carousel {
+  box-sizing: content-box;
   font-family: "Ropa Sans", Arial, Helvetica, sans-serif;
   color: var(--gc-color-primary);
   height: var(--gc-height);
@@ -37,6 +38,7 @@
   position: relative;
   overflow: hidden;
   height: 100%;
+  max-width: 100%;
 }
 .gc-controls {
   position: absolute;
