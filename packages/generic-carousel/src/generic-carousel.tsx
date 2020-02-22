@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { FC, useState, useRef } from "react";
+import React, { FC, useState } from "react";
 
 export type GCItem = {
   guid: string;
@@ -18,16 +18,8 @@ export const GenericCarousel: FC<GenericCarouselProps> = ({
   initialIndex = 0
 }) => {
   const [activeItem, setActiveItem] = useState(initialIndex);
-  const itemsRef = useRef<HTMLDivElement>(null);
   const showItem = (index: number): void => {
     setActiveItem(index);
-    const { current } = itemsRef;
-    if (!current) return;
-    const a = current.querySelector<HTMLAnchorElement>(
-      `.gc-item:nth-child(${index + 1}) a`
-    );
-    if (!a) return;
-    a.focus({ preventScroll: true });
   };
   const nextItem = (): void => {
     let next = activeItem + 1;
@@ -66,7 +58,7 @@ export const GenericCarousel: FC<GenericCarouselProps> = ({
             Next
           </button>
         </fieldset>
-        <div className="gc-items" id="abcd-gc-items" ref={itemsRef}>
+        <div className="gc-items" id="abcd-gc-items">
           {items.map((item, index) => {
             const alt = item.alt || item.title;
             const href = item.href || item.src;
