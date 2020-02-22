@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Generic Carousel should render 1`] = `
+exports[`Generic Carousel Rendering should render a basic item 1`] = `
 <section
   aria-label="Generic Carousel"
   aria-roledescription="carousel"
   className="gc-carousel"
+  data-active={0}
 >
   <div
     className="gc-inner"
@@ -22,6 +23,7 @@ exports[`Generic Carousel should render 1`] = `
         aria-controls="abcd-gc-items"
         aria-label="Previous"
         className="gc-control gc-control-prev"
+        onClick={[Function]}
       >
         Prev
       </button>
@@ -29,6 +31,7 @@ exports[`Generic Carousel should render 1`] = `
         aria-controls="abcd-gc-items"
         aria-label="Next"
         className="gc-control gc-control-next"
+        onClick={[Function]}
       >
         Next
       </button>
@@ -36,7 +39,70 @@ exports[`Generic Carousel should render 1`] = `
     <div
       className="gc-items"
       id="abcd-gc-items"
-    />
+    >
+      <div
+        aria-label="Item 1 of 2"
+        aria-roledescription="slide"
+        className="gc-item gc-item--active"
+        key="1"
+        role="group"
+      >
+        <div
+          className="gc-image"
+        >
+          <a
+            className="gc-a"
+            href="src-1.jpg"
+            onFocus={[Function]}
+          >
+            <img
+              alt="title 1"
+              className="gc-img"
+              src="src-1.jpg"
+            />
+          </a>
+        </div>
+        <div
+          className="gc-item-number"
+        />
+        <h3
+          className="gc-item-title"
+        >
+          title 1
+        </h3>
+      </div>
+      <div
+        aria-label="Item 2 of 2"
+        aria-roledescription="slide"
+        className="gc-item "
+        key="2"
+        role="group"
+      >
+        <div
+          className="gc-image"
+        >
+          <a
+            className="gc-a"
+            href="src-2.jpg"
+            onFocus={[Function]}
+          >
+            <img
+              alt="title 2"
+              className="gc-img"
+              src="src-2.jpg"
+            />
+          </a>
+        </div>
+        <div
+          className="gc-item-number"
+        />
+        <h3
+          className="gc-item-title"
+        >
+          title 2
+        </h3>
+      </div>
+    </div>
   </div>
 </section>
 `;
